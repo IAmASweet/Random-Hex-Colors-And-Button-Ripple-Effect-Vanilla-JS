@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hexa-blocks {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .hexa {
+    width: 100%;
+    height: calc(100% / 5);
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn {
+    border: 0;
+    color: #fff;
+    width: 80%;
+    height: calc(75% / 6);
+    text-transform: uppercase;
+    font-size: 24px;
+    border-radius: 3px;
+    position: relative;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-color: #fff;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
+  }
+  
+  @keyframes scale {
+    to {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .btn, .hexa-blocks {
+      width: 30%;
+    }
+
+    .hexa-blocks {
+      height: 65%;
+      gap: 5px;
+    }
+
+    .btn {
+      height: calc(65% / 6);
+    }
+  }
